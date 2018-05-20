@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 import java.io.*;
 
@@ -58,16 +59,21 @@ public class CourseSection implements Iterable<Student> {
    * Will add a new student to the ArrayList.
    * @param s A Student object.
    */
-  public void addStudent(Student s){
+  public void addStudents(int id, float a1, float a2, float a3, float a4, float midterm, float finalExam){
+	  Student s = new Student(id,a1,a2,a3,a4,midterm,finalExam);
     students.add(s);
   }
   
+  public void addStudent(Student s) {
+	  students.add(s);
+  }
+  
 
-  public void removeStudent(Student s){ 
+  public void removeStudent(int index){ 
     Iterator studentIterator = students.iterator();
     
     while(studentIterator.hasNext()){
-      if(studentIterator.next() == s)
+      if(students.indexOf(studentIterator.next()) == index)
         studentIterator.remove();
     }
   }
@@ -80,6 +86,22 @@ public class CourseSection implements Iterable<Student> {
     	
     }  
   }
+  
+  public String pullID(int index){
+	  
+	  int i;
+	  String id = "";  
+	  Student s = new Student();
+	  
+	    for(i=0; i<students.size(); i++){
+	    	if(index == i)
+	    	{
+	    		s = students.get(i);
+	     id =  s.getid();
+	    	}
+	    }  
+	    return id;
+	  }
   
   public String pullA1(int index){
 	  
@@ -173,21 +195,42 @@ public class CourseSection implements Iterable<Student> {
 	    }  
 	    return finalExam;
 	  }
+ 
+ 
+ 
  public String pullFinalGrade(int index){
 	  
 	  int i;
-	  String finalGrade = "";  
+	  /*String finalGrade = "";*/
+	  float finalGrade = 0f;
 	  Student s = new Student();
 	  
 	    for(i=0; i<students.size(); i++){
 	    	if(index == i)
 	    	{
 	    		s = students.get(i);
-	     finalGrade =  String.valueOf(s.getFinalGrade());
+	    		finalGrade = s.getFinalGrade();
+	     /*finalGrade =  String.valueOf(s.getFinalGrade());*/
 	    	}
 	    }  
-	    return finalGrade;
+	    return calcGrade(finalGrade);
 	  }
+ 
+ // pullFinalGrade
+ public static String calcGrade(float n) {
+		
+		if(n >= 90)
+			return "A";
+		else if ((n < 90) && (n >= 70))
+			return "B";
+		else if((n < 70) && (n >= 60))
+			return "C";
+		else if((n < 60) && (n >= 50))
+			return "D";
+		else
+			return "F";
+	}
+ 
  // to copy the original array list and just take the int ID value and place it inside an Integer array
 public Integer[] idList(ArrayList<Student> students) {
 	Integer[] ids = new Integer[students.size()];
@@ -251,6 +294,59 @@ public Integer[] idList(ArrayList<Student> students) {
     
     return course;
   }
+  public void realRemove(int index) {
+		 /*
+	  for (Iterator<Student> iterator = students.iterator(); iterator.hasNext(); ) {
+		  Student s = iterator.next();
+		  if(index == students.indexOf(s))
+		    iterator.remove();
+		}
+	  */
+	  
+	  
+	  // CourseSection course = new CourseSection();
+	  
+	    Iterator studentObject = students.iterator();
+	    
+	    while(studentObject.hasNext()) {
+	    	Student s = (Student)studentObject.next();
+	    	if(index == students.indexOf(s))
+	    		studentObject.remove();
+	    }
+	    
+	    /*
+	    PrintWriter  newFile;
+		newFile = new PrintWriter(new FileWriter("Marks.txt"));
+	    course.saveTo(newFile);
+	    newFile.close();
+	    */
+	    /*
+	    for(Student s: students) {
+	    	if(index == students.indexOf(s))
+	    		studentIterator.remove();
+	    }
+	          
+	    
+	    for(int i=0; i<students.size(); i++) {
+	    	Student s = students.get(i);
+	    	if(index == s)
+	    		*/   
+}
+  /* Need to fix search method
+  public String search(int id) {
+	  String answer = "";
+	  
+	  for(int i=0; i<students.size(); i++)
+	   {
+		  Student s = students.get(i);
+	    	if(s.getID() == id) 
+	    	answer = students.indexOf(s);
+	   }
+	  return answer;
+  }
+  */
+  
+  
 }
 
 
