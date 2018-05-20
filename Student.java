@@ -18,13 +18,12 @@ public class Student {
   private float a4;
   private float midterm;
   private float finalExam;
-
   
   /**
    * The Default constructor is used to intialize all instance variables 
    * in the class to zero.
    */
-  Student(){
+  Student() {
     ID = 0;
     a1 = 0.0f;
     a2 = 0.0f;
@@ -34,6 +33,7 @@ public class Student {
     finalExam = 0.0f;
   }
   
+  // Student Constructor with 7 parameters
   Student(int id, float a1, float a2, float a3, float a4, float midterm, float finalExam) {
     ID = id;
     this.a1 = a1;
@@ -44,75 +44,34 @@ public class Student {
     this.finalExam = finalExam;
   }
     
-//Set methods for all instance variables of Student 
-  public void setID(int newID)
-  { 
-	  ID = newID; 
-  }
-  
-  public void setA1(float newA1)
-  { 
-	  a1 = newA1; 
-  }
-  public void setA2(float newA2)
-  { 
-	  a2 = newA2; 
-  }
-  public void setA3(float newA3)
-  { 
-	  a3 = newA3; 
-  }
-  public void setA4(float newA4)
-  { 
-	  a4 = newA4; 
-  }
-  
-  public void setMidterm(float newMidterm) 
-  { 
-	midterm = newMidterm; 
-  } 
-  
-  public void setFinalGrade(float newFinal)
-  { 
-	 finalExam = newFinal; 
-  }
+  //Set methods for all instance variables of Student 
+  public void setID(int newID) { ID = newID; }
+  public void setA1(float newA1) { a1 = newA1; }
+  public void setA2(float newA2) { a2 = newA2; }
+  public void setA3(float newA3) { a3 = newA3; }
+  public void setA4(float newA4) { a4 = newA4; }
+  public void setMidterm(float newMidterm) { midterm = newMidterm; } 
+  public void setFinalGrade(float newFinal) {  finalExam = newFinal; }
   
   //Get methods for instance variables of Student
-  public int getID()
-  {
-	  return ID; 
-  }
-  public float getA1()
-  { 
-	  return a1; 
-  } 
+  public int getID() { return ID; }
+  
+  public float getA1() { return a1; } 
+  
+  //gets value of ID as String
+  public String getid() { return String.valueOf(ID); }
   
   public String geta1() {
 	  return String.valueOf(a1);
   }
   
-  public float getA2()
-  { 
-	  return a2; 
-	  }
-  public float getA3()
-  { 
-	  return a3; 
-  }
-  public float getA4()
-  { 
-	  return a4; 
-  }
-  public float getMidterm()
-  { 
-	  return midterm; 
-  }
-  public float getFinalExam()
-  { 
-	  return finalExam; 
-  }
+  public float getA2() { return a2; }
+  public float getA3() { return a3; }
+  public float getA4() { return a4; }
+  public float getMidterm() { return midterm; }
+  public float getFinalExam() { return finalExam; }
+  
   public float getFinalGrade() {
-
 	  float assignPts = 0f;
 	  float midPts = 0f;
 	  float finalePts = 0f;
@@ -135,10 +94,8 @@ public class Student {
     return("   "+ ID + "          " + a1 + "      " + a2 + "      " + a3 + "      " + a4 + "       " + midterm + "      " + finalExam);
   }
   
-
   public void saveTo(PrintWriter aFile) {
 	  aFile.println(toString());
-	  
 	}
   
   /**
@@ -148,7 +105,6 @@ public class Student {
  * @throws IOException 
  * @throws NumberFormatException 
    */
-  
   //using StringTokenizer
   public static Student loadFromST(BufferedReader aFile) throws IOException {
     Student newStudent = new Student();
@@ -167,13 +123,10 @@ public class Student {
   }
     
  public static Student loadFromSTOnlyID(BufferedReader aFile) throws IOException {
-	 
 	 	String null1,null2,null3,null4,null5,null6 = "3";
-
         Student newStudent = new Student();
-     
         StringTokenizer st = new StringTokenizer(aFile.readLine()," ");
-        
+     
         newStudent.ID = Integer.parseInt(st.nextToken());
         null1 = st.nextToken();
         null2 = st.nextToken();
@@ -182,7 +135,6 @@ public class Student {
         null5 = st.nextToken();
         null6 = st.nextToken();
         
-      
         return (newStudent);
-      } 
-  } 
+   } 
+ } 
