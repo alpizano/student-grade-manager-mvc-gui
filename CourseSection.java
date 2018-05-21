@@ -5,6 +5,15 @@ import java.util.Scanner;
 import java.io.*;
 
 /**
+ * <h1>Student</h1>
+ * The program represents a student. 
+ * 
+ * @authors Javier Campos & Alberto Pizano
+ * @version 1.0
+ * @since 2018-04-18
+ */
+
+/**
  * <h1>Course Section</h1>
  * The program represents a course section. 
  * 
@@ -305,14 +314,15 @@ public Integer[] idList(ArrayList<Student> students) {
 	  
 	  
 	  // CourseSection course = new CourseSection();
-	  
-	    Iterator studentObject = students.iterator();
+	  /* works but deletes everything after it
+	    Iterator studentIterator = students.iterator();
 	    
-	    while(studentObject.hasNext()) {
-	    	Student s = (Student)studentObject.next();
+	    while(studentIterator.hasNext()) {
+	    	Student s = (Student)studentIterator.next();
 	    	if(index == students.indexOf(s))
-	    		studentObject.remove();
-	    }
+	    		studentIterator.remove();
+	    }*/
+	    
 	    
 	    /*
 	    PrintWriter  newFile;
@@ -324,15 +334,28 @@ public Integer[] idList(ArrayList<Student> students) {
 	    for(Student s: students) {
 	    	if(index == students.indexOf(s))
 	    		studentIterator.remove();
-	    }
+	    }*/
 	          
 	    
 	    for(int i=0; i<students.size(); i++) {
 	    	Student s = students.get(i);
-	    	if(index == s)
-	    		*/   
+	    	if(index == students.indexOf(s))
+	    		students.remove(index);
 }
-  /* Need to fix search method
+  /* fucked up here was tired, wrote a random wrong method?
+  public void search(int id) {
+
+	  for(int i=0; i<students.size(); i++)
+	   {
+		  Student s = students.get(i);
+	    	if(s.getID() == id) 
+	    	students.remove(id);
+	   }
+  }
+  */
+  
+  
+  /*using boolean to test, should work
   public String search(int id) {
 	  String answer = "";
 	  
@@ -343,10 +366,10 @@ public Integer[] idList(ArrayList<Student> students) {
 	    	answer = students.indexOf(s);
 	   }
 	  return answer;
+  }*/
+  
   }
-  */
-  
-  
 }
+
 
 
