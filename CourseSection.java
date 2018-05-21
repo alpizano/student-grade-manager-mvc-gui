@@ -341,6 +341,7 @@ public Integer[] idList(ArrayList<Student> students) {
 	    	Student s = students.get(i);
 	    	if(index == students.indexOf(s))
 	    		students.remove(index);
+	    }
 }
   /* fucked up here was tired, wrote a random wrong method?
   public void search(int id) {
@@ -355,20 +356,20 @@ public Integer[] idList(ArrayList<Student> students) {
   */
   
   
-  /*using boolean to test, should work
-  public String search(int id) {
-	  String answer = "";
-	  
-	  for(int i=0; i<students.size(); i++)
+  //using boolean to test, should work
+  public int realSearch(int index) {
+int ans =0;
+
+	  for(int i = 0; i<students.size(); i++)
 	   {
 		  Student s = students.get(i);
-	    	if(s.getID() == id) 
-	    	answer = students.indexOf(s);
+	    	if(students.indexOf(s) == index) 
+	    	ans = index;
 	   }
-	  return answer;
-  }*/
-  
+	  return ans;
   }
+  
+  
 }
 
 

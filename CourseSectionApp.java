@@ -50,10 +50,10 @@ public class CourseSectionApp extends Application {
     	 public void handle(ActionEvent actionEvent) { handleAddButtonPress(); }
      });
      
-     /* Need to fix this method
+     // Need to fix this method
      view.getSearchButton().setOnAction(new EventHandler<ActionEvent>() {
     	 public void handle(ActionEvent actionEvent) { handleSearchButtonPress(); }
-     }); */
+     }); 
      
      // Event to clear text fields by clicking "Clear" button
      view.getClearButton().setOnAction(new EventHandler<ActionEvent>() {
@@ -83,7 +83,7 @@ public class CourseSectionApp extends Application {
          public void handle(KeyEvent keyEvent) { handleTextEntry(); }
      });
 	    
-	    /*
+	    /* // Methods to handleTextClear, not working properly ATM (They erase text after typping in 1 field)
 	    view.getidField().setOnMousePressed(new EventHandler<MouseEvent>() {
 	         public void handle(MouseEvent mouseEvent) { handleTextClear(); }
 	     });
@@ -205,15 +205,18 @@ public class CourseSectionApp extends Application {
             view.update();
 	    }
 	    
-	    /* Need to fix this code
+	    // Need to fix this code
 	    private void handleSearchButtonPress() {
-	    	int index =0;
-	    	String id = view.getsearchIDField().getText().trim();
 	    	
-	    	view.getList().getSelectionModel().setSelectedIndex(Integer.parseUnsignedInt(model.search(Integer.parseInt(id)));
+	    	//String id = view.getsearchIDField().getText().trim();
+	    	//int index = model.realSearch(Integer.parseInt(id));
+	    	
+	    	view.getList().scrollTo(55);
+	    	//view.getList().getSelectionModel().select(index);
+	    	//view.getList().getSelectionModel().setSelectedIndex(Integer.parseUnsignedInt(model.realSearch(Integer.parseInt(id)));
 	    	view.update();
 	    }
-	    */
+	    
 
 	    // Event that clear all the text fields when you have a student selected from ArrayList and but you want to type new data and add to list
 	  private void handleTextClear() {	  
