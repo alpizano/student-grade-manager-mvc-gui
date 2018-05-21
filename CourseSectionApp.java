@@ -9,6 +9,15 @@ import javafx.scene.input.*;
 import javafx.stage.Stage;
 import java.util.StringTokenizer;
 
+/**
+ * <h1>Student</h1>
+ * The program represents a student. 
+ * 
+ * @authors Javier Campos & Alberto Pizano
+ * @version 1.0
+ * @since 2018-04-18
+ */
+
 public class CourseSectionApp extends Application {
 	 private CourseSection			model;  // model to which this view is attached
 	 private CourseSectionView		view;   // view that shows the state of the model
@@ -51,6 +60,7 @@ public class CourseSectionApp extends Application {
     	 public void handle(ActionEvent actionEvent) { handleClearButtonPress(); }
      });
      
+     // Methods to handle text entry
      view.getidField().setOnKeyReleased(new EventHandler<KeyEvent>() {
          public void handle(KeyEvent keyEvent) { handleTextEntry(); }
      });
@@ -73,6 +83,7 @@ public class CourseSectionApp extends Application {
          public void handle(KeyEvent keyEvent) { handleTextEntry(); }
      });
 	    
+	    /*
 	    view.getidField().setOnMousePressed(new EventHandler<MouseEvent>() {
 	         public void handle(MouseEvent mouseEvent) { handleTextClear(); }
 	     });
@@ -96,7 +107,7 @@ public class CourseSectionApp extends Application {
 	     });
 		  view.getFinalGradeField().setOnMousePressed(new EventHandler<MouseEvent>() {
 		         public void handle(MouseEvent mouseEvent) { handleTextClear(); }
-		     });
+		     });*/
 		     
      
 
@@ -128,8 +139,20 @@ public class CourseSectionApp extends Application {
 	    	int index = view.getList().getSelectionModel().getSelectedIndex();
 	    		if(index >= 0) {
 	    		model.realRemove(index);
-	    		view.update();
+	    		//view.update();
 	    		}
+	    		
+	    		//to clear TextFields after removing element
+	    		view.getidField().setText("");
+	  	    	view.geta1Field().setText("");
+	            view.geta2Field().setText("");
+	            view.geta3Field().setText("");
+	            view.geta4Field().setText("");
+	            view.getMidtermField().setText("");
+	            view.getFinalExamField().setText("");
+	            view.getFinalGradeField().setText("");
+	            view.update();
+	
 	    }
    
 	    private void handleAddButtonPress() {
