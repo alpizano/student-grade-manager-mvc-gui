@@ -20,6 +20,15 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * <h1>Student</h1>
+ * The program represents a student. 
+ * 
+ * @authors Javier Campos & Alberto Pizano
+ * @version 1.0
+ * @since 2018-04-18
+ */
+
 public class CourseSectionView extends Pane {
 	private CourseSection model;		// The model to which this view is attached
 	
@@ -199,11 +208,20 @@ getChildren().addAll(studentIDList,studentIDListLabel,idLabel,a1Label,a2Label,a3
 	}
 	
 	public void update() {
-		//ArrayList<Integer> exactList = new ArrayList<Integer>(model.getSize());
-		studentIDList.setItems(FXCollections.observableArrayList(model.idList(model.getStudents())));
+		Integer[] exactList = new Integer[model.getSize()];
+		for(int i=0; i<model.getSize(); i++) {
+			exactList[i] = model.idList(model.getStudents())[i];
+		}
+		int selectedIndex = studentIDList.getSelectionModel().getSelectedIndex();
+		studentIDList.setItems(FXCollections.observableArrayList(exactList));
+		studentIDList.getSelectionModel().select(selectedIndex);
 		
 		// enable/disable the Add button accordingly
         addButton.setDisable(idField.getText().trim().length() == 0 && a1Field.getText().trim().length() == 0 && a2Field.getText().trim().length() == 0 && a3Field.getText().trim().length() == 0 && a4Field.getText().trim().length() == 0 && midtermField.getText().trim().length() == 0 && finalExamField.getText().trim().length() == 0 );
       
+        // attemping to supress FinalGradeField when text is input but it disables when viewing also
+        //finalGradeField.setDisable(idField.getText().trim().length() > 0 || a1Field.getText().trim().length() > 0 || a2Field.getText().trim().length() > 0 || a3Field.getText().trim().length() > 0 || a4Field.getText().trim().length() > 0 || midtermField.getText().trim().length() > 0 || finalExamField.getText().trim().length() > 0 );
+        
+        
 	}
 }
