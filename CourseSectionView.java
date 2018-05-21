@@ -199,6 +199,7 @@ getChildren().addAll(studentIDList,studentIDListLabel,idLabel,a1Label,a2Label,a3
 	}
 	
 	public void update() {
+		//ArrayList<Integer> exactList = new ArrayList<Integer>(model.getSize());
 		studentIDList.setItems(FXCollections.observableArrayList(model.idList(model.getStudents())));
 		
 		// enable/disable the Add button accordingly
