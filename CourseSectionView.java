@@ -210,7 +210,7 @@ getChildren().addAll(studentIDList,studentIDListLabel,idLabel,a1Label,a2Label,a3
 	}
 	
 	public void update() {
-		/*
+		
 		Integer[] exactList = new Integer[model.getSize()];
 		for(int i=0; i<model.getSize(); i++) {
 			exactList[i] = model.idList(model.getStudents())[i];
@@ -218,8 +218,8 @@ getChildren().addAll(studentIDList,studentIDListLabel,idLabel,a1Label,a2Label,a3
 		int selectedIndex = studentIDList.getSelectionModel().getSelectedIndex();
 		studentIDList.setItems(FXCollections.observableArrayList(exactList));
 		studentIDList.getSelectionModel().select(selectedIndex);
-		*/
-		studentIDList.setItems(FXCollections.observableArrayList(model.idList(model.getStudents())));
+		
+		//studentIDList.setItems(FXCollections.observableArrayList(model.idList(model.getStudents())));
 		
 		// enable/disable the Add button accordingly
         addButton.setDisable(idField.getText().trim().length() == 0 && a1Field.getText().trim().length() == 0 && a2Field.getText().trim().length() == 0 && a3Field.getText().trim().length() == 0 && a4Field.getText().trim().length() == 0 && midtermField.getText().trim().length() == 0 && finalExamField.getText().trim().length() == 0 );
