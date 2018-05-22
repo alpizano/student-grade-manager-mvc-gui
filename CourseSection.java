@@ -357,16 +357,19 @@ public Integer[] idList(ArrayList<Student> students) {
   
   
   //using boolean to test, should work
-  public int realSearch(int index) {
-int ans =0;
+  public int realSearch(int id) {
+	  	int ans =0;
 
 	  for(int i = 0; i<students.size(); i++)
 	   {
 		  Student s = students.get(i);
-	    	if(students.indexOf(s) == index) 
-	    	ans = index;
+	    	if(s.getID() == id) {
+	    		ans = students.indexOf(s);  
+	    	return ans;
+	    	}
+	    	
 	   }
-	  return ans;
+	  return -1;
   }
   
   
