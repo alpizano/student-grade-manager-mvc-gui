@@ -405,7 +405,33 @@ public class methodTester {
 			   }
 			 return ans;
 		  }
+		 
+		  public static int realSearch(int index) {
+			  int ans =3;
+
+			  	  for(int i = 0; i < course.getSize(); i++)
+			  	   {
+			  		  Student s = course.getStudents().get(i);
+			  		  //System.out.println(s.getID());
+			  	    	if(index == course.getStudents().indexOf(s)) 
+			  	    	ans = s.getID();
+			  	   }
+			  	  return ans;
+			    }
+			    
 		  
+		  public static int yeah(int k) {
+			  int[] thearray = {1, 2, 7, 3, 5};
+			  int ans= 0;
+			  for(int i=0; i<thearray.length; i++) {
+				  if(k == thearray[i])
+				  {
+					   ans= i;
+				 return ans;
+				  }
+			  }
+			return -1;
+		  }
 		    
 	
 	public static void main(String[] args) throws IOException
@@ -431,5 +457,9 @@ public class methodTester {
 		//System.out.println(course.pullA1(2));
 		System.out.println(methodTester.search(15471));
 		System.out.println(methodTester.search(202366));
+		
+		System.out.println(methodTester.realSearch(7));
+		System.out.println(methodTester.realSearch(55));
+		System.out.println(methodTester.yeah(9));
 	}
 }
