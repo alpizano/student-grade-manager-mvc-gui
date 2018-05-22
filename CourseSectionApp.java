@@ -33,7 +33,7 @@ public class CourseSectionApp extends Application {
      // Pass model as parameter thru view constructor
      view = new CourseSectionView(model);
      
-     // Plug in the event handlers
+     
      // Event to display student assignment scores & grades when selecting the ID in the IDList
      view.getList().setOnMousePressed(new EventHandler<MouseEvent>() {
          public void handle(MouseEvent mouseEvent) { handleListSelection(); }
@@ -193,6 +193,8 @@ public class CourseSectionApp extends Application {
 	    	else
 	    		finalExam = 0f;
      
+	    	model.addStudents(id,a1,a2,a3,a4,midterm,finalExam);
+	    	
             view.getidField().setText("");
 	    	view.geta1Field().setText("");
             view.geta2Field().setText("");
@@ -200,18 +202,23 @@ public class CourseSectionApp extends Application {
             view.geta4Field().setText("");
             view.getMidtermField().setText("");
             view.getFinalExamField().setText("");
-            
-	    	model.addStudents(id,a1,a2,a3,a4,midterm,finalExam);
+            view.getFinalGradeField().setText("");
+	    	
             view.update();
 	    }
 	    
 	    // Need to fix this code
 	    private void handleSearchButtonPress() {
 	    	
-	    	//String id = view.getsearchIDField().getText().trim();
-	    	//int index = model.realSearch(Integer.parseInt(id));
+	    	int id = Integer.parseInt(view.getsearchIDField().getText().trim());
+	    	int index = model.realSearch(id);
+	    	if(index > 0 ) {
+	    	view.getList().scrollTo(index);
+	    	view.getList().getSelectionModel().select(index);
+	    	}
+	    	else
+	    		view.getsearchIDField().setText("ID not found!!!");
 	    	
-	    	view.getList().scrollTo(55);
 	    	//view.getList().getSelectionModel().select(index);
 	    	//view.getList().getSelectionModel().setSelectedIndex(Integer.parseUnsignedInt(model.realSearch(Integer.parseInt(id)));
 	    	view.update();
@@ -219,7 +226,8 @@ public class CourseSectionApp extends Application {
 	    
 
 	    // Event that clear all the text fields when you have a student selected from ArrayList and but you want to type new data and add to list
-	  private void handleTextClear() {	  
+	 /*
+	    private void handleTextClear() {	  
 		  //if(view.getidField().getText().trim().length() > 0)
 			  view.getidField().setText("");
 			  view.geta1Field().setText("");
@@ -231,6 +239,8 @@ public class CourseSectionApp extends Application {
 	            view.getFinalGradeField().setText("");
 		  view.update();
 	  }
+	  */
+	    
 	   private void handleClearButtonPress() {
 		   view.getidField().setText("");
 			view.geta1Field().setText("");
@@ -240,6 +250,7 @@ public class CourseSectionApp extends Application {
 	        view.getMidtermField().setText("");
 	        view.getFinalExamField().setText("");
 	        view.getFinalGradeField().setText("");
+	        view.getsearchIDField().setText("");
 		   view.update();
 	   }
 	   
