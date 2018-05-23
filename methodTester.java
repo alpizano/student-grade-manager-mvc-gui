@@ -6,6 +6,15 @@ import java.io.PrintWriter;
 import java.util.*;
 import java.io.*;
 
+/**
+ * <h1>Student</h1>
+ * The program represents a student. 
+ * 
+ * @authors Javier Campos & Alberto Pizano
+ * @version 1.0
+ * @since 2018-04-18
+ */
+
 public class methodTester {
 	// create static course object
 	static CourseSection course = new CourseSection();
