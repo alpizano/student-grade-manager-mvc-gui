@@ -1,11 +1,17 @@
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 import javafx.application.Application;
 import javafx.event.*;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.input.*;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 import java.util.StringTokenizer;
 
@@ -27,8 +33,29 @@ public class CourseSectionApp extends Application {
 	 // Create the model and view
      model = new CourseSection();   
      
-     BufferedReader aFile = new BufferedReader ( new FileReader("Marks.txt"));
+     // Testing adding as resource 
+     /*
+     try (InputStream is = getClass().getResourceAsStream("Marks.txt");
+    	     InputStreamReader isr = new InputStreamReader(is);
+    	     BufferedReader br = new BufferedReader(isr)){
+    	    model = CourseSection.loadFrom(br);
+    	}
+    	*/
+     FileChooser fileChooser = new FileChooser();
+     fileChooser.setTitle("Open Marks File");
+     fileChooser.getExtensionFilters().add(new ExtensionFilter("Text Files", "*.txt"));
+
+     File file = fileChooser.showOpenDialog(null); // you could also pass a owner window here
+     BufferedReader aFile = new BufferedReader ( new FileReader(file));
      model = CourseSection.loadFrom(aFile);
+     /*
+     if (file != null) {
+         // TODO: handle completed file selection by user
+     }
+     */
+     
+     //BufferedReader aFile = new BufferedReader ( new FileReader("Marks.txt"));
+    //model = CourseSection.loadFrom(aFile);
      
      // Pass model as parameter thru view constructor
      view = new CourseSectionView(model);
