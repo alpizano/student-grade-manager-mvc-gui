@@ -19,7 +19,7 @@ import java.util.StringTokenizer;
  * <h1>Student</h1>
  * The program represents a student. 
  * 
- * @authors Javier Campos & Alberto Pizano
+ * @authors Alberto Pizano
  * @version 1.0
  * @since 2018-04-18
  */
@@ -40,7 +40,7 @@ public class CourseSectionApp extends Application {
     	     BufferedReader br = new BufferedReader(isr)){
     	    model = CourseSection.loadFrom(br);
     	}
-    	*/
+    	
      FileChooser fileChooser = new FileChooser();
      fileChooser.setTitle("Open Marks File");
      fileChooser.getExtensionFilters().add(new ExtensionFilter("Text Files", "*.txt"));
@@ -54,8 +54,8 @@ public class CourseSectionApp extends Application {
      }
      */
      
-     //BufferedReader aFile = new BufferedReader ( new FileReader("Marks.txt"));
-    //model = CourseSection.loadFrom(aFile);
+     BufferedReader aFile = new BufferedReader ( new FileReader("Marks.txt"));
+    model = CourseSection.loadFrom(aFile);
      
      // Pass model as parameter thru view constructor
      view = new CourseSectionView(model);
