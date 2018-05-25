@@ -23,7 +23,9 @@ You will need a JDK (Java Development Kit) if you plan to compile the code in an
 
 # Built With
 Eclipse - Java IDE
+
 JavaFX - GUI library 
+
 Contributing
 Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
 
