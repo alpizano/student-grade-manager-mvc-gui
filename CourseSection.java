@@ -17,7 +17,7 @@ import java.io.*;
  * <h1>Course Section</h1>
  * The program represents a course section. 
  * 
- * @authors Javier Campos & Alberto Pizano
+ * @authors Alberto Pizano
  * @version 1.0
  * @since 2018-04-18
  */
@@ -106,7 +106,7 @@ public class CourseSection implements Iterable<Student> {
 	    	if(index == i)
 	    	{
 	    		s = students.get(i);
-	     id =  s.getid();
+	     id =   String.valueOf(s.getID());
 	    	}
 	    }  
 	    return id;
@@ -122,7 +122,7 @@ public class CourseSection implements Iterable<Student> {
 	    	if(index == i)
 	    	{
 	    		s = students.get(i);
-	     a1 =  s.geta1();
+	     a1 =   String.valueOf(s.getA1());
 	    	}
 	    }  
 	    return a1;
@@ -293,70 +293,15 @@ public Integer[] idList(ArrayList<Student> students) {
     return course;
   }
   
-  public static CourseSection loadFromOnlyID(BufferedReader aFile) throws IOException{
-	  //String line = aFile.readLine();
-    CourseSection course = new CourseSection(aFile.readLine()); 
-    aFile.readLine(); // skips line
-    while (aFile.ready()) //read until no more available (i.e., not ready)
-    { 
-    	
-    	course.addStudent(Student.loadFromSTOnlyID(aFile)); //read & add the student
-    	}
-    
-    return course;
-  }
+ 
+  
   public void realRemove(int index) {
-		 /*
-	  for (Iterator<Student> iterator = students.iterator(); iterator.hasNext(); ) {
-		  Student s = iterator.next();
-		  if(index == students.indexOf(s))
-		    iterator.remove();
-		}
-	  */
-	  
-	  
-	  // CourseSection course = new CourseSection();
-	  /* works but deletes everything after it
-	    Iterator studentIterator = students.iterator();
-	    
-	    while(studentIterator.hasNext()) {
-	    	Student s = (Student)studentIterator.next();
-	    	if(index == students.indexOf(s))
-	    		studentIterator.remove();
-	    }*/
-	    
-	    
-	    /*
-	    PrintWriter  newFile;
-		newFile = new PrintWriter(new FileWriter("Marks.txt"));
-	    course.saveTo(newFile);
-	    newFile.close();
-	    */
-	    /*
-	    for(Student s: students) {
-	    	if(index == students.indexOf(s))
-	    		studentIterator.remove();
-	    }*/
-	          
-	    
 	    for(int i=0; i<students.size(); i++) {
 	    	Student s = students.get(i);
 	    	if(index == students.indexOf(s))
 	    		students.remove(index);
 	    }
 }
-  /* fucked up here was tired, wrote a random wrong method?
-  public void search(int id) {
-
-	  for(int i=0; i<students.size(); i++)
-	   {
-		  Student s = students.get(i);
-	    	if(s.getID() == id) 
-	    	students.remove(id);
-	   }
-  }
-  */
-  
   
   //using boolean to test, should work
   public int realSearch(int id) {
