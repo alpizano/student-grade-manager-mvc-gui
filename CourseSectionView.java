@@ -24,7 +24,7 @@ import java.util.ArrayList;
  * <h1>Student</h1>
  * The program represents a student. 
  * 
- * @authors Javier Campos & Alberto Pizano
+ * @authors Alberto Pizano
  * @version 1.0
  * @since 2018-04-18
  */
@@ -218,8 +218,6 @@ getChildren().addAll(studentIDList,studentIDListLabel,idLabel,a1Label,a2Label,a3
 		int selectedIndex = studentIDList.getSelectionModel().getSelectedIndex();
 		studentIDList.setItems(FXCollections.observableArrayList(exactList));
 		studentIDList.getSelectionModel().select(selectedIndex);
-		
-		//studentIDList.setItems(FXCollections.observableArrayList(model.idList(model.getStudents())));
 		
 		// enable/disable the Add button accordingly
         addButton.setDisable(idField.getText().trim().length() == 0 && a1Field.getText().trim().length() == 0 && a2Field.getText().trim().length() == 0 && a3Field.getText().trim().length() == 0 && a4Field.getText().trim().length() == 0 && midtermField.getText().trim().length() == 0 && finalExamField.getText().trim().length() == 0 );
