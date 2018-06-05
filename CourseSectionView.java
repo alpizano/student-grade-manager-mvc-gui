@@ -110,7 +110,7 @@ public class CourseSectionView extends Pane {
 	        
 	    // Create and position the "midtermLabel1" Label
 	        Label midtermLabel1 = new Label("Midterm");
-	        midtermLabel1.relocate(522, 285); //522
+	        midtermLabel1.relocate(510, 285); //522
 	        midtermLabel1.setPrefSize(80, 30);
 	        
 	    // Create and position the "midtermLabel2" Label
@@ -183,22 +183,22 @@ public class CourseSectionView extends Pane {
 	        
 		// Create and position the "Search" Button
 		searchButton = new Button("GO!");
-        searchButton.relocate(740, 20); // y , x
+        searchButton.relocate(740, 20); // x, y
         searchButton.setPrefSize(50, 30);
         //searchButton.setOnAction(this);        
         // Create and position the "Add" Button
         addButton = new Button("Add");
-        addButton.relocate(125, 425);
+        addButton.relocate(130, 425);
         addButton.setPrefSize(100, 25);
        
         // Create and position the "Remove" Button
         removeButton = new Button("Remove");
-        removeButton.relocate(325, 425);
+        removeButton.relocate(330, 425);
         removeButton.setPrefSize(100, 25);	
        
         // Create and position the "Clear" Button
         clearButton = new Button("Clear");
-        clearButton.relocate(525, 425);
+        clearButton.relocate(530, 425);
         clearButton.setPrefSize(100, 25);	
         
         
