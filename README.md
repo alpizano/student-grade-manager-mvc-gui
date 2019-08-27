@@ -1,16 +1,16 @@
 # Student Grade Manager App
 This app is a student grade manager. It reads students grades as input from a text file and creates individual "Student" objects from this text file, line-by-line, each containing student data. It proceeds to the end of the list and populates each Student object into an ArrayList from the class CourseSection. The GUI pulls the available StudentID's and populates them into a scrollable ListView, and when a studentID is selected, his/her corresponding grades appear for each assignment AND their final grade in the class is calculated. There are also four functional buttons on the GUI, add, remove, clear, and search.
 
-## Add:
+# Add:
 Allows the user to add a Student object to the ArrayList and have it display in the ListView with the corresponding assignment grades the user inputs.
 
-## Remove:
+# Remove:
 Allows the user to remove a Student object from the ArrayList.
 
-## Clear:
+# Clear:
 Allows the user to clear the text of the Text Fields.
 
-## SearchID:
+# SearchID:
 Allows the user to bypass scrolling in the ListView and simply input the StudentID they are searching for and display it in the ListView.
 
 # Getting Started
