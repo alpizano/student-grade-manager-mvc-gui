@@ -4,6 +4,16 @@
 # Introduction
 This app is a student grade manager. It reads students grades as input from a text file and creates individual "Student" objects from this text file, line-by-line, each containing student data. It proceeds to the end of the list and populates each Student object into an ArrayList from the class CourseSection. The GUI pulls the available StudentID's and populates them into a scrollable ListView, and when a studentID is selected, his/her corresponding grades appear for each assignment AND their final grade in the class is calculated. There are also four functional buttons on the GUI, add, remove, clear, and search.
 
+# Prerequisites (Needed to Run Program)
+In order to open and run .jar files on your local computer, you will need the JDE (Java Development Environment), which could can find here (pick the download that matches your operating system environment):
+
+https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
+
+If in addition to running Java programs, you plan to develop and write programs in Java, you can always download the JDK (Java Development Kit), which contains the JRE and additional tools for development. It can be fouhnd here:
+
+https://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+
 # Getting Started
 To test this program, simply download the StudentGradeManagerAPP_Lib folder from this repository, and unzip the folder after downloading. Keep the Marks.txt file in the same folder as the StudentGradeManagerApp.jar file and simply double-click the .jar file. The program should open and load the .txt file and functionality will be present.
 
@@ -20,11 +30,6 @@ Allows the user to clear the text of the Text Fields.
 
 # SearchID:
 Allows the user to bypass scrolling in the ListView and simply input the StudentID they are searching for and display it in the ListView.
-
-
-
-# Prerequisites
-You will need a JDK (Java Development Kit) if you plan to compile the code in an IDE, however if you plan to just run the .jar file on your desktop, a JDE (Java Development Environment) should suffice.
 
 # Built With
 Eclipse - Java IDE
