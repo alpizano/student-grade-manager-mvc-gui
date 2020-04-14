@@ -1,5 +1,5 @@
 # Student Grade Manager App
-![Student Grade Manager](https://github.com/alpizano/Student-Grade-Manager-GUI-ECE251/blob/master/sgm.1.gif)
+![Student Grade Manager](https://github.com/alpizano/Student-Grade-Manager-GUI-ECE251/blob/master/sgm.1.gif width="500")
 
 # Introduction
 This app is a student grade manager. It reads students grades as input from a text file and creates individual "Student" objects from this text file, line-by-line, each containing student data. It proceeds to the end of the list and populates each Student object into an ArrayList from the class CourseSection. The GUI pulls the available StudentID's and populates them into a scrollable ListView, and when a studentID is selected, his/her corresponding grades appear for each assignment AND their final grade in the class is calculated. There are also four functional buttons on the GUI, add, remove, clear, and search.
