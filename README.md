@@ -1,6 +1,8 @@
 # Student Grade Manager App
-![Student Grade Manager](https://github.com/alpizano/Student-Grade-Manager-GUI-ECE251/blob/master/sgm.1.gif width="500")
-<img src="https://github.com/alpizano/Student-Grade-Manager-GUI-ECE251/blob/master/sgm.1.gif" width="400">
+![Student Grade Manager]
+<p align="center>
+<img src="https://github.com/alpizano/Student-Grade-Manager-GUI-ECE251/blob/master/sgm.1.gif" width="600">
+                                                                                                         </p>
 
 
 
